@@ -2,10 +2,8 @@
 using MultiTenantArchitecture.Data.Repositories.Interface;
 using System;
 using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace MultiTenantArchitecture.Data.Databases
+namespace MultiTenantArchitecture.Data.Repositories.Implementation
 {
 
 

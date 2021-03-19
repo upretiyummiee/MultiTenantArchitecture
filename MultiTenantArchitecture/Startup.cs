@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MultiTenantArchitecture.Data.Contexts;
+using MultiTenantArchitecture.Data.Repositories.Implementation;
+using MultiTenantArchitecture.Data.Repositories.Interface;
 
 namespace MultiTenantArchitecture
 {
@@ -25,6 +27,9 @@ namespace MultiTenantArchitecture
             services.AddDbContextPool<TenantDbContext>(o => 
                 o.UseSqlServer(Configuration.GetConnectionString("DefaultDatabase"))
             );
+
+            services.AddSingleton<IDatabase, MsSqlDatabase>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
